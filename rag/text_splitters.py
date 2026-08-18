@@ -1,6 +1,6 @@
 from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
-    CharacterTextSplitter,
+    CharacterTextSplitter,    #check out these other splitters too especially code splitters
     TokenTextSplitter,
     MarkdownHeaderTextSplitter,
     Language
