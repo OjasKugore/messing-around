@@ -1,0 +1,37 @@
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.py[oc]
+*.pyo
+build/
+dist/
+wheels/
+*.egg-info/
+
+# ── Virtual environments ───────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── uv ────────────────────────────────────────────────────
+# Uncomment below to ignore the lockfile (not recommended for apps):
+# uv.lock
+
+# ── Environment & secrets ─────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── macOS ─────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── IDE ───────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Misc ──────────────────────────────────────────────────
+*.log
+*.tmp

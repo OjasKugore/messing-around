@@ -1,0 +1,13 @@
+[project]
+name = "clitool"
+version = "0.1.0"
+description = "DataShift — a database migration and sync CLI tool"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "typer>=0.27.1",
+    "rich>=14.0.0",
+]
+
+[project.scripts]
+clitool = "clitool:main_app"

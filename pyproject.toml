@@ -1,0 +1,9 @@
+[project]
+name = "python-playground"
+version = "0.1.0"
+description = "A monorepo for Python experiments — a database migration CLI and a RAG pipeline"
+readme = "README.md"
+requires-python = ">=3.14"
+
+[tool.uv.workspace]
+members = ["clitool", "rag"]
