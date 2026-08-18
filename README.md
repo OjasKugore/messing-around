@@ -54,3 +54,4 @@ uv run --package rag python rag/app.py
 ├── uv.lock                   # Single lockfile for the entire workspace
 └── .gitignore
 ```
+<img width="400" height="400" alt="39hvucmkymma1" src="https://github.com/user-attachments/assets/f66fb61a-1b0b-49d9-82e9-e2694ddfdce0" />
