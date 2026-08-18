@@ -14,6 +14,7 @@ dependencies = [
     "langchain-google-genai>=4.3.4",
     "langchain-openai>=1.5.1",
     "langgraph>=1.2.11",
+    "numpy>=2.5.2",
     "openai>=3.1.0",
     "pypdf>=6.16.1",
     "python-dotenv>=1.2.2",
