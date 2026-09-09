@@ -10,6 +10,14 @@ typedef struct Book{
     float price;
 } Book;
 
+void print_price(float price){
+    printf("Book price: %.2f\n", price);
+}
+
+void apply_discount(float *price, float percent){
+    *price = *price - ((percent / 100) * (*price));
+}
+
 int main()
 {
     
@@ -37,4 +45,11 @@ int main()
     printf("Author: %s\n", b2.author);
     printf("Page count: %d\n", b2.pages);
     printf("Price: %f\n", b2.price);
+
+    print_price(b1.price);
+    print_price(b2.price);
+
+    apply_discount(&b2.price, 50.00);
+    printf("Price after discount: \n");
+    print_price(b2.price);
 }
