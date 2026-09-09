@@ -18,6 +18,32 @@ void apply_discount(float *price, float percent){
     *price = *price - ((percent / 100) * (*price));
 }
 
+
+void inspect_and_tamper(Book b){
+    printf("INSIDE TAMPERING FUNCTION(PBV)=====\n");
+    printf("Title: %s\n", b.title);
+    printf("Author: %s\n", b.author);
+    printf("Pages: %d\n", b.pages);
+    printf("Price: %f\n", b.price);
+    b.price = 0.0f;
+    b.pages = 0;
+}
+
+void print_book_fast(const Book *b){
+    printf("INSIDE CHECKING FUNCTION(PBR)=====\n");
+    printf("Title: %s\n", b -> title);
+    printf("Author: %s\n", b -> author);
+    printf("Pages: %d\n", b -> pages);
+    printf("Price: %f\n", b -> price);
+}
+
+void update_price(Book *b)
+{
+    b -> price = 1000.00;
+}
+
+
+
 int main()
 {
     
@@ -52,4 +78,16 @@ int main()
     apply_discount(&b2.price, 50.00);
     printf("Price after discount: \n");
     print_price(b2.price);
+
+    inspect_and_tamper(b1);
+    printf("After tampering using PBV=====\n");
+    printf("Title: %s\n", b1.title);
+    printf("Author: %s\n", b1.author);
+    printf("Pages: %d\n", b1.pages);
+    printf("Price: %f\n", b1.price);
+
+    print_book_fast(&b2);
+
+    update_price(&b2);
+    printf("Price of Book 2 after updation(PBR): %0.2f\n", b2.price);
 }
