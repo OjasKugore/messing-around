@@ -42,6 +42,24 @@ void update_price(Book *b)
     b -> price = 1000.00;
 }
 
+const Book* most_expensive(const Book book_array[], int size){
+    const Book* pricey;
+    float max = 0;
+    for (int i = 0; i < size; i++){
+        if (book_array[i].price > max){
+            pricey = &book_array[i];
+            max = book_array[i].price;
+        }
+    }
+    return pricey;
+}
+
+void apply_discount_for_array(Book book_array[], int size, float discount){
+    for (int i = 0; i < size; i++)
+    {
+        book_array[i].price = book_array[i].price - (discount/100)*(book_array[i].price);
+    }
+}
 
 
 int main()
@@ -90,4 +108,21 @@ int main()
 
     update_price(&b2);
     printf("Price of Book 2 after updation(PBR): %0.2f\n", b2.price);
+
+
+    //array of structs
+    Book inventory[3] = {
+        {"1984", "George Orwell", 328, 299.99},
+        {"To Kill a Mockingbird", "Harper Lee", 281, 399.50},
+        {"The Great Gatsby", "F. Scott Fitzgerald", 180, 249.00}
+    };
+
+    printf("Priciest book is: %s\n", most_expensive(inventory, 3) -> title);
+    printf("Price: %.2f\n", most_expensive(inventory, 3) -> price);
+
+    printf("After applying 50 percent discount:\n");
+    apply_discount_for_array(inventory, 3, 50);
+    for (int i = 0; i < 3; i++){
+        printf("Price of Book %d: %.2f\n", i, inventory[i].price);
+    }
 }
