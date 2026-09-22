@@ -8,7 +8,7 @@ A monorepo for Python experiments, managed with [uv](https://docs.astral.sh/uv/)
 |---------------------|-------------|
 | [`clitool/`](clitool/) | **DataShift CLI** — a database migration and sync tool built with [Typer](https://typer.tiangolo.com/) and [Rich](https://rich.readthedocs.io/) |
 | [`rag/`](rag/) | **RAG Pipeline & Retrieval Experiments** — LangChain, ChromaDB, Gemini LLM/embeddings demos including semantic chunking, parent-child retrieval, hybrid search, and contextual compression |
-| [`dsa/`](dsa/) | **C & Data Structures / Systems Foundations** — C fundamentals including pointers (Pass-by-Value vs. Pass-by-Reference), array decay, structs, arrays of structs, and learning roadmap |
+| [`dsa/`](dsa/) | **C & Data Structures / Systems Foundations** — C fundamentals and classic data structures: pointers (Pass-by-Value vs. Pass-by-Reference), array decay, structs, stack implementation using structs, and infix-to-postfix conversion |
 | [`AST/`](AST/) | **Abstract Syntax Tree (AST) Exploration** — Python AST analysis scripts and custom NodeVisitors |
 
 ## Getting Started
@@ -53,6 +53,8 @@ cd dsa
 gcc struct_basics.c -o struct_basics && ./struct_basics
 gcc passing_array.c -o passing_array && ./passing_array
 gcc pbv_pbr.c -o pbv_pbr && ./pbv_pbr
+gcc stack_using_structs.c -o stack && ./stack
+gcc infix_to_postfix.c -o infix_to_postfix && ./infix_to_postfix
 ```
 
 ## Repo structure
@@ -67,8 +69,10 @@ gcc pbv_pbr.c -o pbv_pbr && ./pbv_pbr
 │   └── README.md
 ├── dsa/                      # C & DSA practice modules
 │   ├── c_learning_roadmap.md
-│   ├── pbv_pbr.c             # Pass by value & reference
+│   ├── infix_to_postfix.c    # Infix to postfix expression conversion using stack
 │   ├── passing_array.c       # Passing array elements & array decay
+│   ├── pbv_pbr.c             # Pass by value & reference
+│   ├── stack_using_structs.c # Stack ADT implementation with structs (push/pop/peek/display)
 │   └── struct_basics.c       # Structs, PBR/PBV, arrays of structs
 ├── rag/                      # RAG pipeline package
 │   ├── app.py                # Core RAG pipeline demo
