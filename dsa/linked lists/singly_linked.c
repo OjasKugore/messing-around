@@ -131,6 +131,7 @@ Node * delete_from_end(Node * head){
     return head;
 }
 
+//try to redo this
 Node * delete_at_position(Node * head, int pos){
     Node * temp, * ptemp;
     if (head == NULL){
