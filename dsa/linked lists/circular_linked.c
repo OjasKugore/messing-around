@@ -187,7 +187,6 @@ Node * reverse(Node * head){
     } while (curr != head);
 
     head->next = prev;
-    head = prev;
     return head;
 }
 
