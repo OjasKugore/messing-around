@@ -161,6 +161,47 @@ Node * delete_at_position(Node * head, int pos){
 
 }
 
+void search(Node * head, int data){
+    Node * temp = head;
+    int counter = 1, flag = 0;
+    if (temp == NULL){
+        printf("Searching cannot be performed on an empty list.\n");
+        return;
+    }
+    while (temp != NULL){
+        if (temp -> item == data){
+            printf("Item found at position %d.\n", counter);
+            flag = 1;
+            break;
+        }
+        temp = temp -> next;
+        counter +=1;
+    }
+    if (flag == 0){
+        printf("Element not in list.\n");
+    }
+
+}
+
+//MUST REVISE
+Node * reverse_list(Node * head){
+    Node * prev, * curr, * next;
+    prev = NULL;
+    curr = head;
+    if (curr == NULL){
+        printf("Cannot reverse an empty list.\n");
+        return head;
+    }
+    while ( curr != NULL){
+        next = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = next;
+    }
+    head = prev;
+    return head;
+}
+
 
 int main(){
     Node *head = NULL;
@@ -183,5 +224,16 @@ int main(){
     traverse_list(head);
 
     head = delete_at_position(head, 2);
+    traverse_list(head);
+
+    head = insert_beginning(head, 15);
+    traverse_list(head);
+
+    head = insert_beginning(head, 34);
+    traverse_list(head);
+
+    search(head, 15);
+
+    head = reverse_list(head);
     traverse_list(head);
 }
