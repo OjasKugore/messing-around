@@ -18,7 +18,8 @@ void push(Stack *s, char val) {
         printf("Stack Overflow!\n");
         return;
     }
-    s->array[++(s->top)] = val;
+    s -> top++;
+    s->array[s->top] = val;
 }
 
 void pop(Stack *s) {
